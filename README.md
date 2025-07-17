@@ -1,2 +1,3 @@
 # azure-eventgrid
-event trigger for azure to s3
+
+Built with Java, Spring Boot, Maven, Hibernate, Docker.
