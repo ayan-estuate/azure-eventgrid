@@ -47,7 +47,7 @@ public class TenantSecretService {
                     (String) map.get("azureClientSecret")
             );
 
-            log.info("✅ Loaded Azure secrets for tenant {}", tenantId);
+            log.info("✅ Loaded Azure secrets for tenant from secret manager {}", tenantId);
             return secrets;
 
         } catch (Exception e) {
