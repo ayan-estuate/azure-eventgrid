@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: azure-eventgrid
+stack:
+  env: ${stackEnv:dev}
+  name: ${stackName:ndp25}
+azure:
+  aws:
+    secrets:
+      region: ${AZURE_AWS_REGION:us-east-1} # distinct region only for Azure-related secrets
+  eventgrid:
+    tenant-id: ${AZURE_EVENTGRID_TENANT_ID}
+    client-id: ${AZURE_EVENTGRID_CLIENT_ID}
+    client-secret: ${AZURE_EVENTGRID_CLIENT_SECRET}
+    topic-endpoint: ${AZURE_EVENTGRID_TOPIC_ENDPOINT}
+    topic-key: ${AZURE_EVENTGRID_TOPIC_KEY}
