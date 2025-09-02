@@ -11,7 +11,7 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/event-grid")
+@RequestMapping("/v1/api/event-grid")
 public class AzureEventGridController {
     private final AzureEventGridService eventGridService;
 
