@@ -51,4 +51,9 @@ public class AzureEventGridController {
         log.info("Received business event type={} data={}", eventType, firstEvent.get("data"));
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/testing")
+    public ResponseEntity<String> testEndpoint() {
+        return ResponseEntity.ok("Azure Event Grid Controller is working!👍");
+    }
 }
