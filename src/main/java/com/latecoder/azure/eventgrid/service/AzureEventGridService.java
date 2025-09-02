@@ -53,15 +53,15 @@ public class AzureEventGridService {
                     )
             );
             log.info("body: {}", body);
-//            response = WebClient.create()
-//                    .put()
-//                    .uri(url)
-//                    .header("Authorization", "Bearer " + token)
-//                    .contentType(MediaType.APPLICATION_JSON)
-//                    .bodyValue(body)
-//                    .retrieve()
-//                    .bodyToMono(String.class)
-//                    .block();
+            response = WebClient.create()
+                    .put()
+                    .uri(url)
+                    .header("Authorization", "Bearer " + token)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .bodyValue(body)
+                    .retrieve()
+                    .bodyToMono(String.class)
+                    .block();
 
             log.info("Create/Update Event Grid Response: {}", response);
 
@@ -82,13 +82,13 @@ public class AzureEventGridService {
                     "https://management.azure.com/subscriptions/%s/resourceGroups/%s/providers/Microsoft.Storage/storageAccounts/%s/providers/Microsoft.EventGrid/eventSubscriptions/%s?api-version=2022-06-15",
                     tenantAzureSecrets.subscriptionId(), tenantAzureSecrets.resourceGroup(), tenantAzureSecrets.storageAccount(), eventSubName);
             log.info("url: {}", url);
-//            response = WebClient.create()
-//                    .delete()
-//                    .uri(url)
-//                    .header("Authorization", "Bearer " + token)
-//                    .retrieve()
-//                    .bodyToMono(String.class)
-//                    .block();
+            response = WebClient.create()
+                    .delete()
+                    .uri(url)
+                    .header("Authorization", "Bearer " + token)
+                    .retrieve()
+                    .bodyToMono(String.class)
+                    .block();
 
             log.info("Delete Event Grid Response: {}", response);
 
