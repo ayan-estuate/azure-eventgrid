@@ -82,6 +82,18 @@ public class AzureEventGridController {
                 } else {
                     objectInfo.setFormat("UNKNOWN");
                 }
+                // 🔹 Print collected data in logs
+                log.info("📦 New Blob Event Received:");
+                log.info("   Bucket Name: {}", request.getBucketName());
+                log.info("   Object Key : {}", objectInfo.getKey());
+                log.info("   File Name  : {}", objectInfo.getFileName());
+                log.info("   Size       : {} bytes", objectInfo.getSize());
+                log.info("   ETag       : {}", objectInfo.getETag());
+                log.info("   Format     : {}", objectInfo.getFormat());
+                log.info("   Source IP  : {}", objectInfo.getSourceIP());
+                if (!objectInfo.getMetadata().isEmpty()) {
+                    log.info("   Metadata   : {}", objectInfo.getMetadata());
+                }
 
                 objectInfo.setSourceIP((String) data.getOrDefault("clientRequestId", null));
 
