@@ -98,4 +98,9 @@ public class AzureEventGridController {
         }
         return Map.of(); // always return something to keep Event Grid happy
     }
+
+    @GetMapping("/health")
+    public ResponseEntity<String> healthCheck() {
+        return ResponseEntity.ok("App Controller is healthy");
+    }
 }
